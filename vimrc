@@ -145,9 +145,6 @@ map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 set wmh=0
 
-" Project shortcut
-nmap <silent> <Leader>P :Project<CR> 
-
 " Allow mouse selection and block selection
 set mouse=a
 set ttymouse=xterm
@@ -206,6 +203,9 @@ nmap <leader>" di'hr"plr"
 imap :: ::<C-x><C-o>
 imap -> -><C-x><C-o>
 set completeopt=longest,menuone
+
+" Dash functions:
+nmap <leader>h :Dash<CR>
 
 set guifont=Monaco:h15
 

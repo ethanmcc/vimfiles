@@ -10,3 +10,6 @@
 [submodule "bundle/vim-python-pep8-indent"]
 	path = bundle/vim-python-pep8-indent
 	url = https://github.com/hynek/vim-python-pep8-indent.git
+[submodule "bundle/dash.vim"]
+	path = bundle/dash.vim
+	url = https://github.com/rizzatti/dash.vim.git
