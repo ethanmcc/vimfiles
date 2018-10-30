@@ -9,6 +9,8 @@ set viminfo+=!           " Make sure we can save viminfo.
 "set viminfo='100,f1      " Save local and global marks for 100 files.
 autocmd BufRead *.thtml set filetype=php
 autocmd BufRead *.htm set filetype=php
+autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 set hidden
 
 
@@ -207,7 +209,30 @@ set completeopt=longest,menuone
 " Dash functions:
 nmap <leader>h :Dash<CR>
 
+" fzf
+map <leader>t :GFiles<CR>
+
+" CtrlP"
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_custom_ignore = 'node_modules'
+let g:ctrlp_prompt_mappings = {
+    \ 'PrtSelectMove("j")':   ['<c-j>', '<c-n>'],
+    \ 'PrtSelectMove("k")':   ['<c-k>', '<c-p>'],
+    \ 'PrtHistory(-1)':       ['<down>'],
+    \ 'PrtHistory(1)':        ['<up>'],
+    \ }
+
+let g:buffergator_display_regime = 'bufname'
+
+let g:ale_linters = {
+\   'javascript': ['standard'],
+\}
+let g:ale_fixers = {'javascript': ['standard']}
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+
 set guifont=Monaco:h15
 
 " Clear trailing whitespace on save
 autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre *.js :%s/\s\+$//e

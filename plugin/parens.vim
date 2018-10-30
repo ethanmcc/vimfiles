@@ -17,6 +17,7 @@ inoremap ' <c-r>=QuoteDelim("'")<CR>
 vnoremap ( <c-\><c-n>@=Surround('(', ')', 0, 0, '%', 0)<cr>
 vnoremap [ <c-\><c-n>@=Surround('[', ']', 0, 0, '%', 0)<cr>
 vnoremap { <c-\><c-n>@=Surround('{', '}', 0, 0, '%', 0)<cr>
+vnoremap <leader>" "
 vnoremap " <c-\><c-n>@=Surround('"', '"', 0, 0, '%', 0)<cr>
 vnoremap ' <c-\><c-n>@=Surround("'", "'", 0, 0, '%', 0)<cr>
 
