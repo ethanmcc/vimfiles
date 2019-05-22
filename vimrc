@@ -9,7 +9,10 @@ set viminfo+=!           " Make sure we can save viminfo.
 "set viminfo='100,f1      " Save local and global marks for 100 files.
 autocmd BufRead *.thtml set filetype=php
 autocmd BufRead *.htm set filetype=php
+autocmd BufNewFile,BufRead *.ejs set filetype=html
+autocmd BufNewFile,BufRead *.ejs setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype typescript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 set hidden
 
@@ -190,16 +193,27 @@ inoremap t <ESC>:call OF()<CR>
 
 let b:php_noindent_switch=0
 nmap <leader>l :ls<cr>:buf
-vmap <leader>f (%i
+vmap <leader>f (i
 
 " PHP array / column adjustment
 vmap <leader>= :!sed 's/^\s*//' \| column -t -s= \| sed -r 's/(\s*)   (>\| )/\1 =\2/'<CR>gv=
 
 " Switch single-to-double and double-to-single quotes
-vmap <leader>" :s/'/"/g<CR>
+" vmap <leader>" :s/'/"/g<CR>
+vnoremap <leader>" "
 vmap <leader>' :s/"/'/g<CR>
 nmap <leader>' di"hr'plr'
 nmap <leader>" di'hr"plr"
+nmap <leader>` di'hr`plr`
+
+" Visual surround
+vmap " S"
+vmap ` S`
+vmap ' S'
+vmap ( S)
+vmap $ $h
+vmap [ S]
+vmap { S}
 
 " Omni-complete class functions:
 imap :: ::<C-x><C-o>
@@ -226,6 +240,7 @@ let g:buffergator_display_regime = 'bufname'
 
 let g:ale_linters = {
 \   'javascript': ['standard'],
+\   'typescript': ['tslint --fix', 'eslint'],
 \}
 let g:ale_fixers = {'javascript': ['standard']}
 let g:ale_lint_on_save = 1
@@ -236,3 +251,6 @@ set guifont=Monaco:h15
 " Clear trailing whitespace on save
 autocmd BufWritePre *.py :%s/\s\+$//e
 autocmd BufWritePre *.js :%s/\s\+$//e
+
+set cpt-=t
+set cpt-=i
