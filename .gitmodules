@@ -34,3 +34,6 @@
 [submodule "bundle/vim-fsharp"]
 	path = bundle/vim-fsharp
 	url = https://github.com/fsharp/vim-fsharp.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
