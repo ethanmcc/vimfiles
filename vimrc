@@ -239,10 +239,10 @@ let g:ctrlp_prompt_mappings = {
 let g:buffergator_display_regime = 'bufname'
 
 let g:ale_linters = {
-\   'javascript': ['standard'],
+\   'javascript': ['standard', 'eslint'],
 \   'typescript': ['tslint --fix', 'eslint'],
 \}
-let g:ale_fixers = {'javascript': ['standard']}
+let g:ale_fixers = {'javascript': ['standard', 'eslint']}
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 

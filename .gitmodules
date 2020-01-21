@@ -40,3 +40,9 @@
 [submodule "bundle/presenting.vim"]
 	path = bundle/presenting.vim
 	url = git@github.com:sotte/presenting.vim.git
+[submodule "bundle/vim-livedown"]
+	path = bundle/vim-livedown
+	url = git://github.com/shime/vim-livedown.git
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = git@github.com:fatih/vim-go.git
